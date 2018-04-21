@@ -35,7 +35,7 @@ webApp.config(["$routeProvider", "$locationProvider",
                 templateUrl: 'template/app/filter',
                 controller: 'FilterCtrl'
             }).
-             .when('/dog', {
+            when('/dog', {
                 templateUrl: 'template/app/dog',
                 controller: 'DogCtrl'
             }).

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Net;
-using System.Net.Http;
 using Doggies.Models;
-using System.Web.Http;
 using Microsoft.AspNet.Identity.Owin;
 using System.Security.Claims;
 using DarkSide;
+using System.Web.Http;
 
 namespace Doggies.Controllers.Abstract
 {
@@ -24,7 +23,7 @@ namespace Doggies.Controllers.Abstract
         {
             get
             {
-                return Request.GetOwinContext().Authentication;
+                return HttpContext.Current.Request.GetOwinContext().Authentication;
             }
         }
 
@@ -32,7 +31,7 @@ namespace Doggies.Controllers.Abstract
         {
             get
             {
-                return Request.GetOwinContext().GetUserManager<UserManager>();
+                return HttpContext.Current.Request.GetOwinContext().GetUserManager<UserManager>();
             }
         }
 
