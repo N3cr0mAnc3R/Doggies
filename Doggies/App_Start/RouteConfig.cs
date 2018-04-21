@@ -13,10 +13,17 @@ namespace Doggies
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+                name: "Templates",
+                url: "template/{*path}",
+                defaults: new { controller = "Home", action = "Template" }
+            );
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{*query}",
+                defaults: new { controller = "Home", action = "Index" }
             );
         }
     }

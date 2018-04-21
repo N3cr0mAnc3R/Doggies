@@ -8,20 +8,49 @@ namespace Doggies
         // Дополнительные сведения об объединении см. на странице https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/assets").Include(
+                        "~/Scripts/jquery-{version}.js"
+                        , "~/Scripts/bootstrap.js"
+                        , "~/Scripts/respond.js"
+                        , "~/External/angular.js"
+                        , "~/External/angular-aria.js"
+                        , "~/External/angular-locale_ru-ru.js"
+                        , "~/External/angular-message-format.js"
+                        , "~/External/angular-messages.js"
+                        , "~/External/angular-route.js"
+
+                        ));
+
+            bundles.Add(new ScriptBundle("~/bundles/applications").Include(
+
+                        "~/Scripts/app.js"
+
+                        , "~/Scripts/Modules/httpRequest.js"
+                        , "~/Scripts/Modules/pageLoader.js"
+                        , "~/Scripts/Modules/requestPromise.js"
+                        , "~/Scripts/Modules/security.js"
+                        , "~/Scripts/Modules/tools.js"
+
+                        , "~/Scripts/Services/reservationService.js"
+
+                        , "~/Scripts/Controllers/SecurityCtrl.js"
+                        , "~/Scripts/Controllers/RedirectCtrl.js"
+                        , "~/Scripts/Controllers/MainCtrl.js"
+                        , "~/Scripts/Controllers/HallCtrl.js"
+                        , "~/Scripts/Controllers/TeachersCtrl.js"
+                        , "~/Scripts/Controllers/FilterCtrl.js"
+                        , "~/Scripts/Controllers/DogCtrl.js"
+
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            // Используйте версию Modernizr для разработчиков, чтобы учиться работать. Когда вы будете готовы перейти к работе,
-            // готово к выпуску, используйте средство сборки по адресу https://modernizr.com, чтобы выбрать только необходимые тесты.
+            // Use the development version of Modernizr to develop with and learn from. Then, when you're
+            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
