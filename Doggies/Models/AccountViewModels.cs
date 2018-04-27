@@ -19,38 +19,4 @@ namespace Doggies.Models
         [Required]
         public string Password { get; set; }
     }
-    public class ExternalLoginConfirmationViewModel
-    {
-        [Required]
-        public string UserName { get; set; }
-    }
-
-    public class ManageUserViewModel
-    {
-        [Required]
-        public string OldPassword { get; set; }
-
-        [Required]
-        public string NewPassword { get; set; }
-
-        public string ConfirmPassword { get; set; }
-    }
-
-    public class LoginViewModel
-    {
-        public string UserName { get; set; }
-
-        public string Password { get; set; }
-
-        public bool RememberMe { get; set; }
-    }
-
-    public class RegisterViewModel
-    {
-        public string UserName { get; set; }
-
-        public string Password { get; set; }
-
-        public string ConfirmPassword { get; set; }
-    }
 }
